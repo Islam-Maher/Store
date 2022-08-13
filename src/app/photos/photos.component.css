@@ -1,0 +1,10 @@
+
+.above{
+    width: 100%;
+    /* border:2px rgb(40, 206, 92) solid; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    align-items: center;
+    justify-content: space-between;
+}

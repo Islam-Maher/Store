@@ -1,0 +1,4 @@
+<app-nav-bar></app-nav-bar>
+<div class="above">
+<app-each-photo *ngFor="let post of images" [data]="post"  (spacific_element_to_parent)="save_data($event)"></app-each-photo>
+</div>

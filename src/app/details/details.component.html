@@ -1,0 +1,11 @@
+<app-nav-bar></app-nav-bar>
+
+<div class="container"  >
+    <div> <img [src]="taken_data.imagesrc"></div>
+    <div>{{product_info}}</div>
+    <div>price: {{taken_data.price}}$</div>
+    <div id="three">Amount:<input type="number"  id="input_amount" style="width: 50px" min="1" max="8" [value]="taken_data.quantity"[(ngModel)]="new_quantity"></div>
+    <button (click)="save_data()" >Add to cart</button>
+    <div><a routerLink="/main_page">←Bake to store</a></div>
+</div>
+

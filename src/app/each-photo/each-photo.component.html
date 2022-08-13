@@ -1,0 +1,7 @@
+<div class="container" >
+   <div > <img [src]="data.imagesrc" ></div>
+    <div >price: {{data.price}}$ </div>
+    <div id="three">Amount:<input type="number" min="1" max="8" id="input_amount" [(ngModel)]="quantity_val" style="width: 50px" [value]="data.quantity"></div>
+    <button (click)="add_to_cart(data)" >Add to cart</button>
+    <button (click)="sendToDetails();" name="sending" routerLink='/details_page'  id="det"  >Details</button>
+</div>

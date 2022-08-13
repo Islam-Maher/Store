@@ -1,0 +1,45 @@
+<app-nav-bar></app-nav-bar>
+<div class="final_details" >
+    <h2>Total price:{{total_value}}</h2>
+    <form #form="ngForm" (ngSubmit)="submitForm()">
+    <h2>Full Name</h2>
+    <input type="text" required minlength="5" placeholder="minimum 5 character" name="name" [(ngModel)]="name" #namecontrole="ngModel" class="form-control">
+    <div *ngIf="namecontrole.invalid && (namecontrole.dirty || namecontrole.touched)"
+    class="alert">
+        <div *ngIf="namecontrole.errors?.['required']">
+            Name is required.
+        </div>
+        <div *ngIf="namecontrole.errors?.['minlength']">
+            Name must be at least 5 characters long.
+        </div>
+   </div>
+    <h2 >Address</h2>
+    <input type="text" required minlength="8" placeholder="minimum 8 character" name="address" [(ngModel)]="address" #addresscontrole="ngModel">
+    <div *ngIf="addresscontrole.invalid && (addresscontrole.dirty || addresscontrole.touched)"
+    class="alert">
+        <div *ngIf="addresscontrole.errors?.['required']">
+            Address is required.
+        </div>
+        <div *ngIf="addresscontrole.errors?.['minlength']">
+            Address must be at least 8 characters long.
+        </div>
+   </div>
+    <h2 >Credit Card number</h2>
+    <input type="number" required min="999999999999999" placeholder="Enter 16 number" name="credit_num" [(ngModel)]="credit_num" #credit_numcontrole="ngModel" id="number">
+    <div *ngIf="credit_numcontrole.invalid && (credit_numcontrole.dirty || credit_numcontrole.touched)"
+    class="alert">
+        <div *ngIf="credit_numcontrole.errors?.['required']">
+            Credit Card number is required.
+        </div>
+        <div *ngIf="credit_numcontrole.errors?.['min']">
+            Credit Card number must be 16 characters long.
+        </div>
+   </div>
+    <br>
+    <input type="submit" [disabled]="form.invalid" style="margin-left: 10%; margin-top: 15px;" value="Submit" class="btn btn-primary" routerLink="/success_page">
+    </form>
+</div>
+
+<div class="above">
+<app-purchased-child *ngFor="let post of data" [post]="post" [price]="total_value" class="uper_container"  (remove_post)="remove_from_cart($event)"  (send_new_quantity)="calc_price($event)"></app-purchased-child>
+</div>

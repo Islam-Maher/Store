@@ -1,0 +1,39 @@
+div{
+    margin-top: 0px;
+    height: 80px;
+    width: 100%;
+}
+a{
+    text-decoration: none;
+    color:rgb(13, 25, 72);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.up{
+background-color: rgb(51, 110, 226);
+margin: 0px;
+padding:0px;
+display: flex;
+align-items: center;
+justify-content:space-between ;
+
+}
+.up ul{
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+.up .top{
+    margin-left: 10px;
+}
+.up ul li{
+    margin: 25px;
+    font-size: 25px;
+}
+.up ul li a{
+    padding :4px 12px;
+    border-radius: 20px;   
+}
+.up ul li a:hover, .active{
+       background: #fff;
+       color :#1d10a9;
+}

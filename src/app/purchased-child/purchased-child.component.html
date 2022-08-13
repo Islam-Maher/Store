@@ -1,0 +1,6 @@
+<div class="container">
+    <div> <img [src]="post.imagesrc"></div>
+    <div >price: {{post.price}}$ </div>
+    <div id="three">Amount:<input type="number" [value]="post.quantity" min="1" max="8" id="input_amount" [ngModel]="updated_amount" (ngModelChange)="send($event)" style="width: 50px" ></div>
+    <button (click)="remove_from_cart()">remove from cart</button>
+</div>
